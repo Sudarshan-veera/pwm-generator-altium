@@ -1,0 +1,12 @@
+Designator,Part,Value,Quantity
+U1,NE555P,555 timer,1
+Q1,IRLZ44N,N-channel MOSFET,1
+R1;R2,Resistor,10k,2
+R3,Resistor,100,1
+R4,Resistor,2.2k,1
+R5,3296-W,Trimmer potentiometer,1
+C1,Capacitor,47nF,1
+C2,Capacitor,10uF,1
+D1;D2;D3,1N4148,Signal diode,3
+LED1,LED,Status indicator,1
+J1;J2,KF301-2P,2-pin screw terminal,2
