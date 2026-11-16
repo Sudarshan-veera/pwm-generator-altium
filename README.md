@@ -56,6 +56,7 @@ pwm-generator-altium/
 ├── README.md
 ├── images/            schematic, PCB layout and 3D render used in this report
 ├── altium-project/
+│   ├── PWM.PrjPcb                         Altium project (open this)
 │   ├── PWM_schematic.SchDoc               schematic
 │   ├── PWM.PcbDoc                         PCB layout
 │   ├── IRLZ44N.SchLib                     MOSFET schematic symbol
@@ -64,7 +65,9 @@ pwm-generator-altium/
 │   ├── NE555P.IntLib                      555 timer
 │   ├── 3296-W.IntLib                      trimmer potentiometer
 │   └── KF301-2P.IntLib                    2-pin screw terminal
-└── fabrication/       Gerber and drill files, BOM (add after generating them)
+├── fabrication/
+│   └── PWM-gerbers.zip                    Gerber + drill files (2 layers, inches, 2:5)
+└── docs/              PDFs, BOM and test results
 ```
 
 ## 3. Getting the project
@@ -83,9 +86,9 @@ cd pwm-generator-altium
 
 **Open in Altium Designer**
 
-1. Open Altium Designer and choose **File → Open**, then select `altium-project/PWM_schematic.SchDoc` and `altium-project/PWM.PcbDoc`.
-2. To make a project, right-click in the **Projects** panel and choose **Add New Project → PCB Project**, then right-click the project and choose **Add Existing to Project** for both documents.
-3. Install the libraries in the next section so the components resolve, then run **Design → Update PCB Document**.
+1. Open Altium Designer and choose **File → Open Project**, then select `altium-project/PWM.PrjPcb`.
+2. Keep the folder layout from this repo (`altium-project/` next to `libraries/`), because the project refers to the libraries by relative path.
+3. In the **Projects** panel, double-click `PWM_schematic.SchDoc` or `PWM.PcbDoc`.
 
 ## 4. Library setup
 
@@ -97,7 +100,7 @@ The design uses the standard **Miscellaneous Devices.IntLib** and **Miscellaneou
 4. On the **Installed** tab, click **Install** and select both `.IntLib` files.
 5. Confirm both appear in the library dropdown.
 
-Then install the project libraries from this repo the same way (**Install**, then select the file): `libraries/NE555P.IntLib`, `libraries/3296-W.IntLib`, `libraries/KF301-2P.IntLib`. `IRLZ44N.SchLib` and `IFX-PG-TO220-3-904-1.PcbLib` in `altium-project/` can be added with **Add Existing to Project**.
+Then install the project libraries from this repo the same way (**Install**, then select the file): `libraries/NE555P.IntLib`, `libraries/3296-W.IntLib`, `libraries/KF301-2P.IntLib`. `IRLZ44N.SchLib` and `IFX-PG-TO220-3-904-1.PcbLib` are already part of the project and live in `altium-project/`.
 
 ## 5. Design verification (DRC)
 
@@ -117,7 +120,7 @@ Run the check from the PCB editor: **Tools → Design Rule Check → Run Design 
 4. **File → Fabrication Outputs → Gerber Files** (inches, 2:5 format; include the copper, overlay, solder mask, paste and mechanical layers used).
 5. **File → Fabrication Outputs → NC Drill Files**.
 6. Optional: **File → Assembly Outputs → Pick and Place Files**, and **Reports → Bill of Materials**.
-7. Zip the Gerber and drill files into `fabrication/` and check them in the fab's online viewer before ordering.
+7. Zip the Gerber and drill files and check them in the fab's online viewer before ordering. This repo's ready-made set is `fabrication/PWM-gerbers.zip`: copper (`.GTL`, `.GBL`), silkscreen (`.GTO`), solder mask (`.GTS`, `.GBS`), top paste (`.GTP`), board outline (`.GM1`) and drill (`.TXT`).
 
 ## 7. Connectors
 

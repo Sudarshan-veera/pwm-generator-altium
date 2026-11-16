@@ -40,7 +40,7 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=Altium_works\PWM_schematic.SchDoc
+DocumentPath=PWM_schematic.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -57,7 +57,7 @@ GenerateClassCluster=0
 DocumentUniqueId=WWHLICMM
 
 [Document2]
-DocumentPath=NE555P.IntLib
+DocumentPath=..\libraries\NE555P.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -74,7 +74,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document3]
-DocumentPath=3296-W.IntLib
+DocumentPath=..\libraries\3296-W.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -91,7 +91,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document4]
-DocumentPath=IRLZ44NPBF-Infineon-Symbol-Altium-285743\IFX-PG-TO220-3-904-1.PcbLib
+DocumentPath=IFX-PG-TO220-3-904-1.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -108,7 +108,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document5]
-DocumentPath=IRLZ44NPBF-Infineon-Symbol-Altium-285743\IRLZ44N.SchLib
+DocumentPath=IRLZ44N.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -125,7 +125,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document6]
-DocumentPath=KF301-2P.IntLib
+DocumentPath=..\libraries\KF301-2P.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -142,7 +142,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document7]
-DocumentPath=..\..\..\Public\Documents\Altium\Projects\PCB_Project-ESP32\PWM.PcbDoc
+DocumentPath=PWM.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
