@@ -1,0 +1,21 @@
+# Altium generated / backup folders
+History/
+__Previews/
+Project Outputs for */
+Project Logs for */
+Recovery/
+
+# Altium temp and backup files
+*.SchDocPreview
+*.PcbDocPreview
+*.PrjPcbStructure
+*.Dat
+*.~*
+*.bak
+*.tmp
+*.$$$
+
+# OS / editor
+Thumbs.db
+.DS_Store
+desktop.ini
