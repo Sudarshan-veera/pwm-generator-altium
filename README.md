@@ -12,6 +12,10 @@ A variable duty-cycle PWM generator: a **NE555P** timer sets the pulse width and
 4. [Library setup](#4-library-setup)
 5. [Design verification (DRC)](#5-design-verification-drc)
 6. [Fabrication outputs](#6-fabrication-outputs)
+7. [Connectors](#7-connectors)
+8. [Testing](#8-testing)
+9. [Possible improvements](#9-possible-improvements)
+10. [License](#10-license)
 
 ---
 
@@ -114,6 +118,37 @@ Run the check from the PCB editor: **Tools → Design Rule Check → Run Design 
 5. **File → Fabrication Outputs → NC Drill Files**.
 6. Optional: **File → Assembly Outputs → Pick and Place Files**, and **Reports → Bill of Materials**.
 7. Zip the Gerber and drill files into `fabrication/` and check them in the fab's online viewer before ordering.
+
+## 7. Connectors
+
+| Connector | Pin | Function |
+|---|---|---|
+| J2 | 1 | +12 V supply (VCC) |
+| J2 | 2 | Ground |
+| J1 | 1 | +12 V (VCC) for the load |
+| J1 | 2 | MOSFET drain: load return, switched by the PWM signal |
+
+D3 across the load is a flyback diode. The load is switched on the low side, so connect it between J1 pin 1 and J1 pin 2.
+
+## 8. Testing
+
+To measure the output:
+
+1. Connect a 12 V DC supply to J2, with a resistive or LED load on J1.
+2. Probe the gate of Q1 (or the 555 output, pin 3) with an oscilloscope, grounding the probe at J2 pin 2.
+3. Turn the trimmer R5 from one end to the other and record the frequency, the minimum and maximum duty cycle and the output voltage swing.
+4. Save scope captures to `docs/` and link them here.
+
+## 9. Possible improvements
+
+- Add a decoupling capacitor across the 555 supply pins and a bulk capacitor on the 12 V input.
+- Add a pull-down resistor on the MOSFET gate so the load stays off while the 555 starts up.
+- Add mounting holes and test points for the PWM output.
+- Add reverse-polarity protection on the supply input.
+
+## 10. License
+
+Released under the [MIT License](LICENSE).
 
 ## Credits
 
